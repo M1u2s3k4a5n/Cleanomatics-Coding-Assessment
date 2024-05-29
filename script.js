@@ -73,9 +73,16 @@ document.addEventListener('DOMContentLoaded', function() {
     if (fuelConsumption > tankCapacity) {
       resultText += " Out of range!";
       fuelText = "";
+      resultElement.classList.add('out-of-range');
+    } else {
+      resultElement.classList.remove('out-of-range');
     }
 
     resultElement.textContent = resultText;
     fuelElement.textContent = fuelText;
+
+    // Add CSS classes for colorful output
+    resultElement.classList.add('result-text');
+    fuelElement.classList.add('fuel-text');
   }
 });
